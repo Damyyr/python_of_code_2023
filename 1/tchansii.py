@@ -1,6 +1,6 @@
 import re
 
-#  man there's got to be a better way than this
+#  man there's got to be a better way than this..
 digit_map = {
     'zero': 'z0o',
     'one': 'o1e',
