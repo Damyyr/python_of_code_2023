@@ -2,6 +2,8 @@
 # For example, params like so: -b=\' -a=\', -ba=\[ -aa=\]
 # will wrap each row between ' ' and the wrap the whole file with [ ]
 # Basically, this example will parse a file with many lines into a single string array.
+#
+# I suggest you to put your input and output files in scripts/tmp to keep them un-commitable
 
 import argparse
 
@@ -17,7 +19,7 @@ parser.add_argument('-b', '--before', default='', help='to be added before each 
 parser.add_argument('-ncr', '--no-carriage-return', action='store_false', dest='has_return', help='prevent carriage return after each row of the original files')
 
 # ---- All file manipulation
-parser.add_argument('-o', '--output', default='o.py', help='output destination', type=str)
+parser.add_argument('-o', '--output', default='tmp/o.py', help='output destination', type=str)
 parser.add_argument('-aa', '--after-all', default='', help='to be added after the whole file', type=str)
 parser.add_argument('-ba', '--before-all', default='', help='to be added after the whole file', type=str)
 
