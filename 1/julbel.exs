@@ -15,9 +15,9 @@ defmodule Aoc23.Day01 do
     |> String.to_integer()
   end
 
-
   def extract_number_part2(str) do
     digits_spelled_regex = "one|two|three|four|five|six|seven|eight|nine|zero"
+
     first =
       Regex.run(~r/#{digits_spelled_regex}|[[:digit:]]/, str)
       |> List.first()
@@ -56,16 +56,14 @@ defmodule Aoc23.Day01 do
   defp to_digit(digit), do: digit
 end
 
+alias Aoc23.Day01
 
+input = File.stream!("input-julbel.txt")
 
-  alias Aoc23.Day01
+input
+|> Day01.get_calibration_data(&Aoc23.Day01.extract_number_part1/1)
+|> IO.inspect(label: "Day01a")
 
-  input = File.stream!("input-julbel.txt")
-
-    input
-    |> Day01.get_calibration_data(&Aoc23.Day01.extract_number_part1/1)
-    |> IO.inspect(label: "Day01a")
-
-    input
-    |> Day01.get_calibration_data(&Aoc23.Day01.extract_number_part2/1)
-    |> IO.inspect(label: "Day01b")
+input
+|> Day01.get_calibration_data(&Aoc23.Day01.extract_number_part2/1)
+|> IO.inspect(label: "Day01b")
