@@ -7,8 +7,6 @@ global _count
 _count = 0
 LIMIT = 100
 
-# plus que 999999999
-
 considered_input = inputs.PROD
 directions = considered_input.pop(0)
 
